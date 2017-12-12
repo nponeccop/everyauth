@@ -8,10 +8,6 @@
     a.fb_button_medium(href='/auth/facebook')
       span#fb_login_text.fb_button_text
         Connect with Facebook
-  #qb-login.qb_button(style='background-position: left -188px')
-    a.qb_button_medium(href='/auth/quickbook')
-      span#qb_login_text.qb_button_text
-        Connect with Quickbooks
   #azureacs-login
     a(href='/auth/azureacs', style='border: 0px')
       img(style='border: 0px', src='http://www.microsoft.com/france/etudiants/Files/labo/windows_azure_logo.png')
@@ -72,7 +68,7 @@
   #skyrock-login
     a(href='/auth/skyrock', style='border: 0px') Login with Skyrock
   #evernote-login
-    a(href='/auth/evernote', style='border: 0px')
+    a(href='/auth/evernote', style='border: 0px') 
       img(src='http://www.evernote.com/about/media/img/logo.png')
   #tripit-login
     a(href='/auth/tripit', style='border: 0px')
@@ -83,27 +79,27 @@
     a(href='/auth/soundcloud', style='border: 0px')
       img(src='http://connect.soundcloud.com/2/btn-connect-sc-l.png', title='Login with SoundCloud')
   #mixi-login
-    a(href='/auth/mixi', style='border: 0px')
+    a(href='/auth/mixi', style='border: 0px') 
       img(src='http://mixi.co.jp/press/images/thumb_press_def.gif', title='Login with mixi')
   #mailchimp-login
     a(href='/auth/mailchimp',style='border: 0px') Login with Mailchimp
   #mendeley-login
-    a(href='/auth/mendeley', style='border: 0px')
+    a(href='/auth/mendeley', style='border: 0px') 
       img(src='http://d1rktifm8krpj.cloudfront.net/graphics/commonnew/logo-mendeley_1248201417297118.png', title='Login with Mendeley')
   #shopify-login
-    a(href='/auth/shopify', style='border: 0px')
+    a(href='/auth/shopify', style='border: 0px') 
       img(src='http://wiki.shopify.com/upload/b/b6/Shopify_Green_32x32.png', title='Login with Shopify')
   #stripe-login
-    a(href='/auth/stripe', style='border: 0px')
+    a(href='/auth/stripe', style='border: 0px') 
       img(src='https://stripe.com/img/documentation/connect-button-blue.png', title='Login with Stripe')
   #salesforce-login
-    a(href='/auth/salesforce', style='border: 0px')
+    a(href='/auth/salesforce', style='border: 0px') 
       img(src='http://upload.wikimedia.org/wikipedia/commons/7/71/Salesforce_Logo_2009.JPG', title='Login with Salesforce')
   #openid-login
     form#openid(action='/auth/openid')
       label(for='openid_identifier') OpenID Identifier: &nbsp;
       input(type='text', name='openid_identifier')
-      input(type='submit')
+      input(type='submit') Login
 - else
   h2 Authenticated
   - if (everyauth.facebook)
@@ -150,13 +146,13 @@
     p= JSON.stringify(everyauth.vimeo.user)
   - if (everyauth.justintv)
     h3 Justin.tv User Data
-    p= JSON.stringify(everyauth.justintv.user)
+    p= JSON.stringify(everyauth.justintv.user)  
   - if (everyauth['37signals'])
     h3 37signals User Data
-    p= JSON.stringify(everyauth['37signals'].user)
+    p= JSON.stringify(everyauth['37signals'].user)  
   - if (everyauth.tumblr)
     h3 Tumblr User Data
-    p= JSON.stringify(everyauth.tumblr.user)
+    p= JSON.stringify(everyauth.tumblr.user)  
   - if (everyauth.box)
     h3 Box.net User Data
     p= JSON.stringify(everyauth.box.user)

@@ -96,15 +96,6 @@ everyauth
     })
     .redirectPath('/');
 
-everyauth.quickbook
-  .consumerKey(conf.qb.appId)
-  .consumerSecret(conf.qb.appSecret)
-  .findOrCreateUser( function (sess, accessToken, accessSecret, yahooUser) {
-    return usersByQbId[fbUserMetadata.id] ||
-      (usersByFbId[userMetadata.id] = addUser('quickbook', userMetadata));
-  })
-  .redirectPath('/');
-
 everyauth
   .twitter
     .consumerKey(conf.twit.consumerKey)
@@ -425,8 +416,8 @@ everyauth
 
 everyauth
   .shopify
-    .apiHost('https://SHOP-NAME.myshopify.com')
-    .oauthHost('https://SHOP-NAME.myshopify.com')
+    .apiHost('https://SHOP-NAME.myshopify.com') 
+    .oauthHost('https://SHOP-NAME.myshopify.com') 
     .appId(conf.shopify.appId)
     .appSecret(conf.shopify.appSecret)
     .scope(conf.shopify.scope)
