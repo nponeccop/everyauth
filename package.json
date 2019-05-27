@@ -26,22 +26,21 @@
     "lib": "lib"
   },
   "dependencies": {
-    "oauth": "https://github.com/ciaranj/node-oauth/tarball/master",
-    "request": "2.x",
-    "connect": "2.x",
-    "openid": "0.x",
-    "xml2js": "0.x",
+    "connect": "^2.30.2",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
     "node-swt": "0.x",
     "node-wsfederation": "0.x",
-    "debug": "0.x",
-    "express": "3.x"
+    "oauth": "^0.9.15",
+    "openid": "^0.5.13",
+    "request": "^2.88.0",
+    "xml2js": "0.x"
   },
   "devDependencies": {
-    "jade": "0.x",
-    "tobi": "0.x",
-    "expect.js": "0.x",
-    "mocha": "0.x",
-    "satisfy": "0.x"
+    "jade": "^1.11.0",
+    "expect.js": "^0.3.1",
+    "tobi": "^0.3.2",
+    "mocha": "^6.1.4"
   },
   "engines": {
     "node": ">=0.4"
