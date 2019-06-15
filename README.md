@@ -1,3 +1,9 @@
+Everyauth Restoration Attempt
+=============================
+
+This is an attempt to make everyauth working again. The last version on npm, 0.4.9, is broken almost beyond repair
+So this repo needs its own issue tracker so I can create issues liberally. 
+
 everyauth
 ==========
 
