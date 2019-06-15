@@ -2,8 +2,7 @@ var path = require('path');
 var EventEmitter = require('events').EventEmitter;
 var connect = require('connect');
 var express = require('express');
-var ExpressRouter = require('express/lib/router');
-var __pause = connect.utils.pause;
+// var __pause = connect.utils.pause;
 var merge = require('./lib/utils').merge;
 
 var everyauth = module.exports = {};
@@ -27,10 +26,10 @@ everyauth.middleware = function (opts) {
     autoSetupRoutes: true
   }, opts);
   var userAlias = everyauth.expressHelperUserAlias || 'user';
-  var router = new ExpressRouter;
+  var router = express.Router();
 
   if (opts.autoSetupRoutes) {
-    var router = new ExpressRouter();
+    var router = express.Router();
     var modules = everyauth.enabled;
     for (var _name in modules) {
       var _module = modules[_name];
@@ -44,7 +43,7 @@ everyauth.middleware = function (opts) {
       addRequestLocals(req, res, userAlias);
       registerReqGettersAndMethods(req);
       if (router) {
-        router._dispatch(req, res, next);
+        router(req, res, next);
       } else {
         next();
       }

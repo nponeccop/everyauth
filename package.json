@@ -26,7 +26,7 @@
     "lib": "lib"
   },
   "dependencies": {
-    "connect": "^2.30.2",
+    "connect": "^3.7.0",
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "node-swt": "0.x",
@@ -37,7 +37,7 @@
     "xml2js": "0.x"
   },
   "devDependencies": {
-    "jade": "^1.11.0",
+    "pug": "^2.0.3",
     "expect.js": "^0.3.1",
     "tobi": "^0.3.2",
     "mocha": "^6.1.4"

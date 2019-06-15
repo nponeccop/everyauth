@@ -452,16 +452,14 @@ everyauth
 
 var app = express();
 app.use(express.static(__dirname + '/public'))
-  .use(express.favicon())
-  .use(express.bodyParser())
-  .use(express.cookieParser('htuayreve'))
-  .use(express.session())
+//  .use(express.favicon())
+//  .use(express.bodyParser())
+//  .use(express.cookieParser('htuayreve'))
+//  .use(express.session())
   .use(everyauth.middleware());
 
-app.configure( function () {
-  app.set('view engine', 'jade');
-  app.set('views', everyauthRoot + '/example/views');
-});
+app.set('view engine', 'pug');
+app.set('views', everyauthRoot + '/example/views');
 
 app.get('/', function (req, res) {
   res.render('home');
