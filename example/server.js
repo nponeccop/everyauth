@@ -1,4 +1,5 @@
 var express = require('express')
+  , session = require('express-session')
   , everyauth = require('../index')
   , conf = require('./conf')
   , everyauthRoot = __dirname + '/..';
@@ -215,7 +216,7 @@ everyauth.linkedin
 everyauth.google
   .appId(conf.google.clientId)
   .appSecret(conf.google.clientSecret)
-  .scope('https://www.googleapis.com/auth/userinfo.profile https://www.google.com/m8/feeds/')
+  .scope('https://www.googleapis.com/auth/userinfo.profile')
   .findOrCreateUser( function (sess, accessToken, extra, googleUser) {
     googleUser.refreshToken = extra.refresh_token;
     googleUser.expiresIn = extra.expires_in;
@@ -452,10 +453,13 @@ everyauth
 
 var app = express();
 app.use(express.static(__dirname + '/public'))
-//  .use(express.favicon())
+//  TODO it's unclear if it's needed in Express 4
 //  .use(express.bodyParser())
-//  .use(express.cookieParser('htuayreve'))
-//  .use(express.session())
+  .use(session({
+    secret: 'htuayreve',
+    resave: false,
+    saveUninitialized: true
+  }))
   .use(everyauth.middleware());
 
 app.set('view engine', 'pug');

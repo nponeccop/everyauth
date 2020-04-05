@@ -89,7 +89,6 @@ function fetchUserFromSession (req, callback) {
   var auth = session && session.auth;
   if (!auth || !auth.userId) return callback();
   var everymodule = everyauth.everymodule;
-  var pause = __pause(req);
 
   var findUserById_function = everymodule.findUserById();
 
@@ -105,7 +104,6 @@ function fetchUserFromSession (req, callback) {
     if (user) req.user = user;
     else delete session.auth;
     callback();
-    pause.resume();
   }
 }
 
